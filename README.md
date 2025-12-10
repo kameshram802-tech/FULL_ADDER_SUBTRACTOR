@@ -43,13 +43,57 @@ Borrow out = A'Bin + A'B + BBin
 Write the detailed procedure here
 
 **Program:**
+**Full adder**
+```
+module full_adder (
+    input  wire a, b, cin,   // Inputs
+    output wire sum, carry   // Outputs
+);
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+    // Logic equations
+    assign sum   = a ^ b ^ cin;                  // XOR for sum
+    assign carry = (a & b) | (b & cin) | (a & cin); // Majority function for carry
+
+endmodule
+
+```
+
+Program to design a full adder and full subtractor circuit and verify its truth table in quartus using Verilog programming.
+
+<img width="857" height="243" alt="image" src="https://github.com/user-attachments/assets/70af2cc4-955a-4d80-9bde-3b74ab9f42ce" />
+
+**Full Subtracter**
+```
+module full_subtractor (
+    input  wire a, b, bin,       // Inputs
+    output wire diff, borrow     // Outputs
+);
+
+    // Logic equations
+    assign diff   = a ^ b ^ bin;                  // Difference
+    assign borrow = (~a & b) | (~(a ^ b) & bin);  // Borrow logic
+
+endmodule
+```
+Program to design a full adder and full subtractor circuit and verify its truth table in quartus using Verilog programming.
+
+<img width="717" height="250" alt="image" src="https://github.com/user-attachments/assets/313f7365-ec7e-4eca-b167-4d296534c049" />
+
+Developed by: A.Kamesh RegisterNumber: 25017583
+
 
 **RTL Schematic**
+**Full Adder**
+<img width="996" height="761" alt="image" src="https://github.com/user-attachments/assets/ccd43f58-e01e-45ef-9194-b8febd5dc44f" />
 
+**Full subtractor**
+<img width="1003" height="641" alt="image" src="https://github.com/user-attachments/assets/64744f68-bc21-4385-a2e7-71335c1b11ae" />
 **Output Timing Waveform**
+**Full adder**
+<img width="1230" height="293" alt="image" src="https://github.com/user-attachments/assets/6d5fb8bf-1c1b-454f-b5b6-8a0e9ad08a38" />
+
+**Full subtractor**
+<img width="1230" height="293" alt="image" src="https://github.com/user-attachments/assets/9033c414-5df5-4454-af6b-d4c0b815beb6" />
 
 **Result:**
 
